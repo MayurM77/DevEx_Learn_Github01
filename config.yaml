@@ -1,0 +1,4 @@
+app_name=scan-sigridci
+semver=0.1.0
+projectkey=CICD
+artifactory_build_name=CICD.scan-sigridci
