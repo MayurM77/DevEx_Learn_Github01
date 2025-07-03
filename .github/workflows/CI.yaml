@@ -30,12 +30,23 @@ jobs:
       - name: Read config.yaml file
         run: |
           app_name=$(yq e '.app_name' config.yaml)
-          echo "APP_NAME=$app_name"
+          
+          # Set extracted values as environment variables for further use
+          echo "APP_NAME=$app_name" >> $GITHUB_ENV
           echo "APP_NAME=$app_name"
 
       # Printing the variables 
       - name: print variables
         run: |
           echo "App Name: $APP_NAME"
+
+  job2:
+      # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+        steps:
+          # Printing the variables 
+          - name: print variables
+            run: |
+                echo "App Name: $APP_NAME"
           
           
