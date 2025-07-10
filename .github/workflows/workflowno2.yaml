@@ -1,0 +1,20 @@
+name: My Third Workflow C2
+
+on: 
+ workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+
+jobs:
+  build3rdworkflow: 
+      runs-on: ubuntu-latest
+      steps:
+       - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+       - name: Run a one-line script
+         run: |
+              echo Hello, humans ! I am Batman
+              echo "name: ${{ inputs.name }}"
